@@ -1,0 +1,1229 @@
+/* Główne tło aplikacji */
+body {
+    background-color: #f8f9fa;
+}
+
+.main-content {
+    background-color: #f8f9fa;
+    padding: 2rem;
+}
+
+/* Ujednolicone style dla kart i elementów */
+.card,
+.accordion-item {
+    background: white;
+    border-radius: 10px !important;
+    border: none;
+    box-shadow: 0 2px 4px rgba(246, 85, 238, 0.1);
+}
+
+/* Style dla sidebara */
+.sidebar {
+    background-color: rgba(246, 85, 238, 0.1);
+    border-right: 1px solid rgba(246, 85, 238, 0.1);
+}
+
+.sidebar-nav .nav-link:hover {
+    background-color: rgba(246, 85, 238, 0.15);
+    color: #2c3e50;
+}
+
+/* Style dla formularzy */
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+    background-color: white;
+}
+
+.form-control:hover {
+    border-color: var(--primary-color);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem var(--primary-color-transparent);
+    outline: none;
+}
+
+/* Style dla przycisków */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
+}
+
+/* Style dla grid containera */
+.d-grid {
+    display: grid;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.d-grid .btn {
+    justify-self: center;
+    width: 100%;
+}
+
+/* Style dla formularzy */
+form {
+    width: 100%;
+}
+
+/* Style dla tabów */
+.auth-tabs {
+    border-bottom: none;
+    padding: 0.5rem 0.5rem 0;
+    gap: 0.5rem;
+}
+
+.auth-tabs .nav-link {
+    border: none;
+    padding: 0.75rem 1.5rem;
+    color: #6c757d;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.auth-tabs .nav-link:hover {
+    color: var(--primary-color);
+    background-color: var(--primary-color-transparent);
+}
+
+.auth-tabs .nav-link.active {
+    color: #2c3e50;
+    background-color: white;
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: 600;
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+/* Style dla tabów */
+.auth-tabs {
+    border-bottom: none;
+    padding: 0.5rem 0.5rem 0;
+    gap: 0.5rem;
+}
+
+.auth-tabs .nav-link {
+    border: none;
+    padding: 0.75rem 1.5rem;
+    color: #6c757d;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.auth-tabs .nav-link:hover {
+    color: var(--primary-color);
+    background-color: var(--primary-color-transparent);
+}
+
+.auth-tabs .nav-link.active {
+    color: #2c3e50;
+    background-color: white;
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: 600;
+}
+
+.tab-content {
+    padding: 1.5rem;
+}
+
+.tab-pane {
+    width: 100%;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Style dla wszystkich powiadomień */
+.alert {
+    position: relative;
+    padding: 1rem 3rem 1rem 1.25rem;
+    border-radius: 8px;
+    border-width: 2px;
+    margin: 0;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#profileAlerts,
+#emailAlerts,
+#passwordAlerts,
+.auth-alerts {
+    width: 100%;
+    margin-top: 1rem;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    clear: both;
+}
+
+#profileAlerts .alert,
+#emailAlerts .alert,
+#passwordAlerts .alert,
+.auth-alerts .alert {
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    background-color: white;
+    padding: 1rem 3rem 1rem 1.25rem;
+    position: relative;
+    border-width: 2px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+#profileAlerts .alert.show,
+#emailAlerts .alert.show,
+#passwordAlerts .alert.show,
+.auth-alerts .alert.show {
+    max-height: 100px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Wspólne style dla wszystkich alertów */
+.alert-success {
+    background-color: #d4edda !important;
+    border-color: #198754 !important;
+    color: #155724 !important;
+}
+
+.alert-danger {
+    background-color: #f8d7da !important;
+    border-color: #dc3545 !important;
+    color: #721c24 !important;
+}
+
+.alert-warning {
+    background-color: #fff3cd !important;
+    border-color: #ffc107 !important;
+    color: #856404 !important;
+}
+
+/* Przyciski w settings */
+.card-body .btn-primary {
+    float: none;
+    margin: 0;
+}
+
+/* Czyszczenie float po przyciskach */
+.card-body::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Wspólne style dla przycisków zamknięcia alertów */
+.btn-close {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    padding: 0;
+    background-size: 1rem;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+    border: none;
+    outline: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+.btn-close:focus {
+    box-shadow: none;
+    opacity: 1;
+    outline: none;
+}
+
+.btn-close:active {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Usuwam duplikaty stylów dla .btn-close */
+.alert .btn-close,
+.auth-alerts .btn-close {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.alert-success {
+    background-color: #d4edda !important;
+    border-color: #198754 !important;
+    color: #155724 !important;
+}
+
+.alert-danger {
+    background-color: #f8d7da !important;
+    border-color: #dc3545 !important;
+    color: #721c24 !important;
+}
+
+.alert-warning {
+    background-color: #fff3cd !important;
+    border-color: #ffc107 !important;
+    color: #856404 !important;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Kontener na powiadomienia */
+#alertMessages,
+#loginAlerts,
+#registerAlerts,
+#resetAlerts {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* Style dla powiadomień walidacyjnych */
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    background-color: #fff8f8;
+    border: 1px solid rgba(220, 53, 69, 0.15);
+    color: #721c24;
+    box-shadow: 0 2px 4px rgba(246, 85, 238, 0.1);
+}
+
+.form-control.is-invalid~.invalid-feedback {
+    display: block;
+    animation: fadeInDown 0.3s ease forwards;
+}
+
+/* Usuwam domyślne styles przeglądarki dla walidacji */
+.form-control.is-invalid {
+    border-color: rgba(220, 53, 69, 0.3);
+    background-image: none;
+    padding-right: 1rem;
+}
+
+.form-control.is-valid {
+    border-color: rgba(25, 135, 84, 0.3);
+    background-image: none;
+    padding-right: 1rem;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+    background-color: white;
+}
+
+.form-control:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(246, 85, 238, 0.2);
+}
+
+.form-control:focus {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 12px rgba(246, 85, 238, 0.4);
+}
+
+a {
+    color: #007bff;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: rgba(246, 85, 238, 0.4);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+    margin-bottom: 1rem;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav .nav-item {
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav .nav-link {
+    color: #2c3e50;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.sidebar-nav .nav-link i {
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.sidebar-nav .nav-link:hover {
+    color: #2c3e50;
+    background-color: rgba(246, 85, 238, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(246, 85, 238, 0.4);
+}
+
+.sidebar-nav .nav-item.active .nav-link {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 8px rgba(246, 85, 238, 0.3);
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f8f9fa;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.header-content .btn-primary {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    color: white;
+}
+
+.user-info span {
+    margin-right: 1rem;
+}
+
+/* Settings Page Styles */
+.card {
+    background: white;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 4px rgba(246, 85, 238, 0.1);
+    border: none;
+}
+
+.card:hover,
+.card.mt-4:hover,
+.accordion-item:hover,
+.sidebar-nav .nav-link:hover {
+    transform: none;
+    box-shadow: 0 2px 4px rgba(246, 85, 238, 0.1);
+}
+
+.card-title {
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.accordion-button {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 500;
+    padding: 1rem 1.5rem;
+    position: relative;
+}
+
+.accordion-button::after {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+    background-size: 1rem;
+    opacity: 0.6;
+}
+
+.accordion-button:not(.collapsed)::after {
+    transform: rotate(-180deg);
+    opacity: 1;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0, 0, 0, 0.125);
+}
+
+.form-label {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+/* Profile Settings Sections */
+.mb-4 {
+    margin-bottom: 2rem !important;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Section headers */
+h4.mb-3 {
+    margin-bottom: 1.5rem !important;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* Button containers */
+.text-end {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.text-end+.alert,
+.text-end+.integration-alerts {
+    margin-top: 1rem;
+    clear: both;
+    width: 100%;
+}
+
+/* Button spacing */
+.btn-primary {
+    margin-bottom: 1.5rem;
+}
+
+/* Form sections spacing */
+.card-body>div:not(:last-child) {
+    margin-bottom: 2.5rem;
+}
+
+/* Last form section */
+.card-body>div:last-child {
+    margin-bottom: 0;
+}
+
+/* Card styles */
+.card.mt-4 {
+    background: white;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 4px rgba(246, 85, 238, 0.1);
+    border: none;
+    margin: 1.5rem auto;
+    max-width: 1000px;
+}
+
+.card.mt-4:hover {
+    transform: none;
+    box-shadow: 0 2px 4px rgba(246, 85, 238, 0.1);
+}
+
+.card.mt-4 .card-body {
+    padding: 2rem;
+}
+
+/* Remove previous unified container styles */
+.navbar,
+.card-body {
+    background: white;
+}
+
+/* Button alignment in settings */
+.card-body .btn-primary {
+    float: none;
+    margin: 0;
+}
+
+.card-body .text-end {
+    clear: both;
+    padding-top: 1rem;
+}
+
+/* Clear floats after buttons */
+.card-body::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Container for forms in settings */
+.settings-form-container {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+
+    #profileAlerts,
+    #emailAlerts,
+    #passwordAlerts,
+    #alertMessages {
+        width: calc(100% - 30px);
+    }
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-white.border-bottom {
+    border-radius: 10px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Usuwam poprzednie styles dla .navbar */
+.navbar {
+    padding: 1rem 2rem;
+}
+
+.navbar-text {
+    color: #2c3e50 !important;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.navbar-text[style*="hidden"] {
+    opacity: 0;
+}
+
+#logoutButton {
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    background: transparent;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+#logoutButton:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.navbar .container-fluid {
+    padding: 0;
+}
+
+/* Style dla kontenerów */
+.card,
+.accordion-item,
+.form-control,
+.btn,
+.alert {
+    border-radius: 5px !important;
+}
+
+.content-wrapper {
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.card-body {
+    position: relative;
+    background: white;
+    border-radius: 10px !important;
+    padding: 2rem;
+}
+
+/* Zmienne z kolorami */
+:root {
+    --primary-color: #f655ee;
+    --primary-color-hover: #e048d8;
+    --primary-color-transparent: rgba(246, 85, 238, 0.1);
+    --pink-color: rgb(246, 85, 238);
+    --pink-color-dark: rgb(220, 47, 211);
+}
+
+/* Aktualizacja kolorów */
+.sidebar-nav .nav-item.active .nav-link {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem var(--primary-color-transparent);
+    outline: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
+}
+
+.auth-tabs .nav-link.active {
+    color: #2c3e50;
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: 600;
+}
+
+.auth-tabs .nav-link:hover {
+    color: var(--primary-color);
+    background-color: var(--primary-color-transparent);
+}
+
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Aktualizacja dla accordion items */
+.accordion-item {
+    transition: none;
+}
+
+.accordion-item:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Usunięcie hover z accordion */
+.accordion-item {
+    background: white;
+    border-radius: 10px !important;
+    border: none;
+    box-shadow: 0 2px 4px rgba(246, 85, 238, 0.1);
+    margin-bottom: 1rem;
+}
+
+.accordion-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Usunięcie transformacji z formularzy */
+.form-control:hover {
+    border-color: var(--primary-color);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem var(--primary-color-transparent);
+    outline: none;
+}
+
+/* Przyciski z delikatniejszym efektem */
+.btn-primary:hover {
+    background-color: var(--primary-color-hover);
+    border-color: var(--primary-color-hover);
+}
+
+/* Taby bez transformacji */
+.auth-tabs .nav-link:hover {
+    color: var(--primary-color);
+    background-color: var(--primary-color-transparent);
+}
+
+/* Sidebar z delikatniejszym efektem */
+.sidebar-nav .nav-link:hover {
+    background-color: rgba(246, 85, 238, 0.15);
+    color: #2c3e50;
+}
+
+/* Usunięcie wszystkich transform i box-shadow przy hover */
+.card:hover,
+.accordion-item:hover,
+.sidebar-nav .nav-link:hover {
+    transform: none;
+    box-shadow: 0 2px 4px rgba(246, 85, 238, 0.1);
+}
+
+/* Usuwam wszystkie transition */
+.card,
+.card.mt-4 {
+    transition: none;
+}
+
+/* Wyłączam domyślne styles Bootstrap dla walidacji */
+.tooltip,
+.tooltip.bs-tooltip-auto[data-popper-placement^=top],
+.tooltip.bs-tooltip-top,
+.tooltip-inner,
+.tooltip-arrow {
+    display: none !important;
+}
+
+/* Usuwam domyślne styles przeglądarki dla walidacji */
+.form-control.is-invalid,
+.form-control.is-valid {
+    background-image: none !important;
+    border-color: #ced4da !important;
+    padding-right: 1rem !important;
+}
+
+.auth-alerts {
+    margin-top: 1rem;
+}
+
+.auth-alerts .alert {
+    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    background-color: white;
+    padding: 1rem 3rem 1rem 1.25rem;
+    position: relative;
+    border-width: 2px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.auth-alerts .alert.show {
+    max-height: 100px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.auth-alerts .alert-success {
+    background-color: #d4edda !important;
+    border-color: #198754 !important;
+    color: #155724 !important;
+}
+
+.auth-alerts .alert-danger {
+    background-color: #f8d7da !important;
+    border-color: #dc3545 !important;
+    color: #721c24 !important;
+}
+
+.auth-alerts .alert-warning {
+    background-color: #fff3cd !important;
+    border-color: #ffc107 !important;
+    color: #856404 !important;
+}
+
+.auth-alerts .btn-close {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    padding: 0;
+    background-size: 1rem;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+    border: none;
+    outline: none !important;
+}
+
+.auth-alerts .btn-close:hover {
+    opacity: 1;
+}
+
+.auth-alerts .btn-close:focus {
+    box-shadow: none;
+    opacity: 1;
+    outline: none;
+}
+
+.auth-alerts .btn-close:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.card-body .alert {
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    background-color: white;
+    padding: 1rem 3rem 1rem 1.25rem;
+    position: relative;
+    border-width: 2px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.card-body .alert.show {
+    max-height: 100px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Przyciski w Integration Settings */
+.card-body .text-end {
+    margin-bottom: 0;
+}
+
+.card-body .text-end {
+    margin-bottom: 0;
+}
+
+/* Kontener dla alertów w Integration Settings */
+.card-body .integration-alerts {
+    clear: both;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.accordion-body {
+    position: relative;
+    background: white;
+    padding: 1.5rem;
+}
+
+.accordion-body .alert {
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    background-color: white;
+    padding: 1rem 3rem 1rem 1.25rem;
+    position: relative;
+    border-width: 2px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+.accordion-body .alert.show {
+    max-height: 100px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Przyciski w Integration Settings */
+.accordion-body .btn-primary {
+    float: none;
+    margin: 0;
+}
+
+/* Kontener dla alertów w Integration Settings */
+.accordion-body .integration-alerts {
+    clear: both;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Style dla linku Forgot password */
+#forgotPasswordLink {
+    font-size: 0.85em;
+    transition: color 0.2s;
+    display: inline-block;
+    margin-top: 0.25rem;
+    color: #6c757d;
+    text-decoration: none;
+}
+
+#forgotPasswordLink:hover {
+    color: var(--primary-color) !important;
+    text-decoration: underline !important;
+}
+
+/* Usuń zbędne styles dla przycisków w innych kontekstach */
+.accordion-body .btn-primary,
+.sidebar-nav .btn-primary,
+.navbar .btn-primary {
+    float: none;
+    margin: 0;
+}
+
+/* Style dla grupy input z hasłem */
+.password-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-group .form-control {
+    padding-right: 4.5rem;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    color: #6c757d;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.password-toggle:hover {
+    color: var(--primary-color);
+}
+
+.password-toggle:focus {
+    outline: none;
+    color: var(--primary-color);
+}
+
+/* Loader styles */
+#postsLoader {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: var(--pink-color);
+}
+
+/* Style dla paginacji */
+.page-link {
+    color: var(--pink-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--pink-color);
+    border-color: var(--pink-color);
+    color: white;
+}
+
+.page-item:not(.active) .page-link:hover {
+    color: var(--pink-color-dark);
+}
+
+/* Style dla przycisków edycji */
+.btn-outline-primary {
+    color: var(--pink-color);
+    border-color: var(--pink-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--pink-color);
+    border-color: var(--pink-color);
+    color: white;
+}
+
+/* Style dla tagów */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.tag {
+    background-color: var(--primary-color-transparent);
+    color: var(--pink-color);
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    display: inline-block;
+    cursor: default;
+}
+
+.post-title {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+/* Style dla wyszukiwarki */
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-container input {
+    padding-left: 35px;
+    border-radius: 20px !important;
+    border: 1px solid #dee2e6;
+}
+
+.search-container input:focus {
+    border-color: var(--pink-color);
+    box-shadow: 0 0 0 0.2rem var(--primary-color-transparent);
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+/* Usuń niebieski outline z przycisków */
+.btn:focus,
+.btn-outline-primary:focus,
+.btn-primary:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.btn-outline-primary:active,
+.btn-primary:active {
+    background-color: var(--pink-color-dark) !important;
+    border-color: var(--pink-color-dark) !important;
+}
+
+/* Style dla nagłówka postów */
+.posts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.posts-header h2 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.posts-header .btn-primary {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+}
+
+/* Szerokość przycisku New Post */
+.w-80 {
+    width: 80%;
+    max-width: 200px;
+}
