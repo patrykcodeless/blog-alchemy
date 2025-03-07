@@ -130,26 +130,258 @@ a.btn-primary:hover {
     color: var(--text-primary);
 }
 
-/* Przyciski Next/Previous */
-a.btn,
-button.btn,
-#Previous,
-#Next,
+/* Style dla przycisków Previous/Next - z wyższym priorytetem */
+button#Previous,
+button#Next,
+a#Previous,
+a#Next,
+.pagination button,
+.pagination a,
+.pagination .page-item .page-link,
+.pagination .page-link,
 .btn-pagination {
-    color: var(--primary-color);
-    background-color: transparent;
-    border-color: var(--primary-color);
-    transition: all 0.2s ease;
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+    border-color: var(--border-color) !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
 }
 
-a.btn:hover,
-button.btn:hover,
-#Previous:hover,
-#Next:hover,
+button#Previous:hover,
+button#Next:hover,
+a#Previous:hover,
+a#Next:hover,
+.pagination button:hover,
+.pagination a:hover,
+.pagination .page-item .page-link:hover,
+.pagination .page-link:hover,
 .btn-pagination:hover {
-    background-color: var(--primary-color);
-    color: var(--text-primary);
-    border-color: var(--primary-color);
+    background-color: var(--primary-color) !important;
+    color: var(--text-button) !important;
+    border-color: var(--primary-color) !important;
+}
+
+button#Previous:focus,
+button#Next:focus,
+a#Previous:focus,
+a#Next:focus,
+.pagination button:focus,
+.pagination a:focus,
+.pagination .page-item .page-link:focus,
+.pagination .page-link:focus,
+.btn-pagination:focus,
+button#Previous:active,
+button#Next:active,
+a#Previous:active,
+a#Next:active,
+.pagination button:active,
+.pagination a:active,
+.pagination .page-item .page-link:active,
+.pagination .page-link:active,
+.btn-pagination:active {
+    background-color: var(--primary-color) !important;
+    color: var(--text-button) !important;
+    border-color: var(--primary-color) !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Poprawione style dla przycisków akcji - większe odstępy */
+.actions-col .btn {
+    margin-right: 15px !important;
+    margin-bottom: 10px !important;
+    border-radius: 4px;
+    display: inline-block !important;
+}
+
+.actions-col .btn:last-child {
+    margin-right: 0 !important;
+}
+
+/* Dodatkowe styles dla kolumny akcji */
+.actions-col {
+    min-width: 150px !important;
+    padding: 10px 15px !important;
+    text-align: left !important;
+}
+
+/* Style dla przycisków edycji i usuwania w tabeli */
+#postsTable .actions-col .btn {
+    margin-right: 15px !important;
+    margin-bottom: 8px !important;
+    padding: 6px 12px !important;
+    display: inline-block !important;
+}
+
+#postsTable .actions-col .btn:last-child {
+    margin-right: 0 !important;
+}
+
+/* Łagodniejszy czerwony kolor dla przycisków usuwania */
+.actions-col .btn-danger,
+.actions-col button[data-action="delete"],
+button[data-bs-target="#deletePostModal"],
+button[data-bs-toggle="modal"],
+button[data-toggle="modal"],
+button[data-target="#deletePostModal"],
+.delete-post-btn {
+    background-color: #e05c6e !important;
+    border-color: #e05c6e !important;
+    color: white !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.actions-col .btn-danger:hover,
+.actions-col button[data-action="delete"]:hover,
+button[data-bs-target="#deletePostModal"]:hover,
+button[data-bs-toggle="modal"]:hover,
+button[data-toggle="modal"]:hover,
+button[data-target="#deletePostModal"]:hover,
+.delete-post-btn:hover {
+    background-color: #d44556 !important;
+    border-color: #d44556 !important;
+    color: white !important;
+}
+
+.actions-col .btn-danger:focus,
+.actions-col .btn-danger:active,
+.actions-col button[data-action="delete"]:focus,
+.actions-col button[data-action="delete"]:active,
+button[data-bs-target="#deletePostModal"]:focus,
+button[data-bs-target="#deletePostModal"]:active,
+button[data-bs-toggle="modal"]:focus,
+button[data-bs-toggle="modal"]:active,
+button[data-toggle="modal"]:focus,
+button[data-toggle="modal"]:active,
+button[data-target="#deletePostModal"]:focus,
+button[data-target="#deletePostModal"]:active,
+.delete-post-btn:focus,
+.delete-post-btn:active {
+    background-color: #d44556 !important;
+    border-color: #d44556 !important;
+    color: white !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Ogólne style dla przycisków usuwania */
+.btn-danger,
+button.btn-danger {
+    background-color: #e05c6e !important;
+    border-color: #e05c6e !important;
+    color: white !important;
+}
+
+.btn-danger:hover,
+button.btn-danger:hover {
+    background-color: #d44556 !important;
+    border-color: #d44556 !important;
+    color: white !important;
+}
+
+.btn-danger:focus,
+.btn-danger:active,
+button.btn-danger:focus,
+button.btn-danger:active {
+    background-color: #d44556 !important;
+    border-color: #d44556 !important;
+    color: white !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Style dla przycisków w modalu usuwania */
+#deletePostModal .btn-danger,
+#deleteConfirmation .btn-danger,
+.modal .btn-danger {
+    background-color: #e05c6e !important;
+    border-color: #e05c6e !important;
+    color: white !important;
+    margin-left: 10px;
+}
+
+#deletePostModal .btn-danger:hover,
+#deleteConfirmation .btn-danger:hover,
+.modal .btn-danger:hover {
+    background-color: #d44556 !important;
+    border-color: #d44556 !important;
+}
+
+/* Globalne usunięcie niebieskiego outline dla wszystkich przycisków */
+button,
+.btn,
+a.btn,
+input[type="button"],
+input[type="submit"] {
+    outline: 0 !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+}
+
+button:focus,
+.btn:focus,
+a.btn:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+button:active,
+.btn:active,
+a.btn:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Style dla przycisków usuwania */
+.btn-danger,
+button[data-action="delete"],
+button.delete-btn,
+.delete-button {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+}
+
+.btn-danger:hover,
+button[data-action="delete"]:hover,
+button.delete-btn:hover,
+.delete-button:hover {
+    background-color: #c82333 !important;
+    border-color: #bd2130 !important;
+    color: white !important;
+}
+
+.btn-danger:focus,
+.btn-danger:active,
+button[data-action="delete"]:focus,
+button[data-action="delete"]:active,
+button.delete-btn:focus,
+button.delete-btn:active,
+.delete-button:focus,
+.delete-button:active {
+    background-color: #c82333 !important;
+    border-color: #bd2130 !important;
+    color: white !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Dodatkowe styles dla usunięcia efektu focus */
+button:focus-visible,
+button:focus,
+button:active,
+.btn:focus-visible,
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
 
 /* Style dla formularzy */
@@ -367,24 +599,6 @@ a.btn.disabled,
     color: rgba(255, 255, 255, 0.65) !important;
     border-color: #6c757d !important;
     opacity: 0.4 !important;
-}
-
-/* Przyciski Previous/Next */
-#Previous,
-#Next,
-.btn-pagination,
-.pagination .page-link {
-    color: var(--primary-color) !important;
-    background-color: transparent !important;
-    border-color: var(--primary-color) !important;
-}
-
-#Previous:hover,
-#Next:hover,
-.btn-pagination:hover,
-.pagination .page-link:hover {
-    background-color: var(--primary-color) !important;
-    color: var(--text-primary) !important;
 }
 
 /* Kontener wyszukiwarki */
@@ -709,7 +923,7 @@ table.table tr:last-child td {
     white-space: nowrap !important;
 }
 
-/* Dodatkowe style dla kontenerów i tła */
+/* Dodatkowe styles dla kontenerów i tła */
 .page-content,
 .content,
 .content-area,
@@ -820,7 +1034,7 @@ div[class*="pagination-info"] {
     opacity: 0.7 !important;
 }
 
-/* Dodatkowe style dla wyszukiwarki */
+/* Dodatkowe styles dla wyszukiwarki */
 input[type="search"]::placeholder,
 .search-input::placeholder,
 input.form-control::placeholder {
@@ -846,7 +1060,7 @@ input.form-control::placeholder {
     color: var(--primary-color) !important;
 }
 
-/* Dodatkowe style dla całej nawigacji */
+/* Dodatkowe styles dla całej nawigacji */
 nav,
 .navbar,
 .navbar-light,
@@ -856,7 +1070,7 @@ nav,
     border-color: rgba(226, 135, 200, 0.2) !important;
 }
 
-/* Bardzo specyficzne style dla górnej nawigacji */
+/* Bardzo specyficzne styles dla górnej nawigacji */
 .main-content nav.navbar.navbar-expand-lg.navbar-light.bg-white.border-bottom {
     background-color: var(--bg-card) !important;
     border-color: rgba(226, 135, 200, 0.2) !important;
@@ -900,7 +1114,7 @@ input.search-posts-input:focus,
     color: var(--text-primary) !important;
 }
 
-/* Nadpisanie wszystkich możliwych styli Bootstrapa */
+/* Nadpisanie wszystkich możliwych stylów Bootstrapa */
 .bg-light,
 .bg-white,
 .bg-body,
@@ -1081,7 +1295,7 @@ span.input-group-text,
     border-bottom-right-radius: 10px !important;
 }
 
-/* Dodatkowe style dla karty wyszukiwarki */
+/* Dodatkowe styles dla karty wyszukiwarki */
 .card {
     background-color: var(--bg-card) !important;
     border: none !important;
@@ -1125,7 +1339,7 @@ span.input-group-text,
     margin-left: 10px;
 }
 
-/* Specjalne style dla przycisków "Update Email", "Update Password" i "Save Profile" */
+/* Specjalne styles dla przycisków "Update Email", "Update Password" i "Save Profile" */
 button[id="updateEmail"],
 button[id="updatePassword"],
 button[id="saveProfile"],
@@ -1154,4 +1368,195 @@ button[id="saveSettings"] {
     outline: none !important;
     box-shadow: none !important;
     background-color: var(--bg-button-hover) !important;
+}
+
+/* Style dla przycisków w grupie btn-group */
+.btn-group .btn {
+    margin-right: 10px !important;
+    border-radius: 4px !important;
+    position: relative !important;
+    float: left !important;
+    display: inline-block !important;
+}
+
+.btn-group .btn:last-child {
+    margin-right: 0 !important;
+}
+
+/* Usunięcie domyślnych stylów Bootstrap dla btn-group */
+.btn-group {
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+    position: relative !important;
+}
+
+/* Specyficzne style dla btn-group w kolumnie akcji */
+.actions-col .btn-group {
+    display: flex !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.actions-col .btn-group .btn {
+    margin-right: 10px !important;
+    border-radius: 4px !important;
+}
+
+.actions-col .btn-group .btn:last-child {
+    margin-right: 0 !important;
+}
+
+/* Usunięcie domyślnych stylów Bootstrap dla btn-group-sm */
+.btn-group-sm {
+    display: flex !important;
+    gap: 10px !important;
+}
+
+.btn-group-sm .btn {
+    margin-right: 10px !important;
+    border-radius: 4px !important;
+}
+
+.btn-group-sm .btn:last-child {
+    margin-right: 0 !important;
+}
+
+/* Dodatkowe styles dla przycisków edycji i usuwania */
+.btn-group .edit-post,
+.btn-group .delete-post {
+    margin-right: 10px !important;
+    border-radius: 4px !important;
+}
+
+.btn-group .delete-post {
+    margin-right: 0 !important;
+}
+
+/* Poprawione wyrównanie nagłówka Actions */
+#postsTable thead tr th:nth-child(4) {
+    text-align: center !important;
+}
+
+/* Wyrównanie komórek w kolumnie Actions */
+#postsTable tbody tr td:nth-child(4) {
+    text-align: center !important;
+}
+
+/* Poprawione style dla przycisków Next/Previous */
+#nextPageBtn,
+#prevPageBtn,
+#nextPageBtn:focus-visible,
+#prevPageBtn:focus-visible,
+#nextPageBtn:focus,
+#prevPageBtn:focus,
+#nextPageBtn:active,
+#prevPageBtn:active,
+button[id="nextPageBtn"],
+button[id="prevPageBtn"],
+button[id="nextPageBtn"]:focus-visible,
+button[id="prevPageBtn"]:focus-visible,
+button[id="nextPageBtn"]:focus,
+button[id="prevPageBtn"]:focus,
+button[id="nextPageBtn"]:active,
+button[id="prevPageBtn"]:active {
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+#nextPageBtn:hover,
+#prevPageBtn:hover,
+button[id="nextPageBtn"]:hover,
+button[id="prevPageBtn"]:hover {
+    background-color: var(--primary-color) !important;
+    color: var(--text-button) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* Poprawiony kolor przycisku Logout */
+#logoutButton,
+button[id="logoutButton"],
+.btn-outline-danger {
+    background-color: transparent !important;
+    color: #e05c6e !important;
+    border-color: #e05c6e !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#logoutButton:hover,
+button[id="logoutButton"]:hover,
+.btn-outline-danger:hover {
+    background-color: #e05c6e !important;
+    color: white !important;
+    border-color: #e05c6e !important;
+}
+
+#logoutButton:focus,
+#logoutButton:active,
+button[id="logoutButton"]:focus,
+button[id="logoutButton"]:active,
+.btn-outline-danger:focus,
+.btn-outline-danger:active {
+    background-color: transparent !important;
+    color: #e05c6e !important;
+    border-color: #e05c6e !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Wycentrowanie wszystkich nagłówków tabeli */
+#postsTable thead tr th {
+    text-align: center !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    color: var(--text-secondary) !important;
+    padding: 15px 10px !important;
+    position: relative !important;
+}
+
+/* Delikatne pionowe linie oddzielające kolumny */
+#postsTable thead tr th:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 0;
+    height: 50%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#postsTable tbody tr td {
+    text-align: center !important;
+    vertical-align: middle !important;
+    padding: 12px 10px !important;
+    position: relative !important;
+}
+
+#postsTable tbody tr td:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 0;
+    height: 50%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Poprawki dla kolumny tytułu - wyrównanie do lewej */
+#postsTable thead tr th:first-child,
+#postsTable tbody tr td:first-child {
+    text-align: left !important;
+}
+
+/* Poprawki dla kolumny akcji */
+#postsTable tbody tr td:nth-child(4) {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
