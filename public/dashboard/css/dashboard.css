@@ -1560,3 +1560,175 @@ button[id="logoutButton"]:active,
     justify-content: center !important;
     align-items: center !important;
 }
+
+/* Style dla przycisku publikacji */
+.btn-success,
+.btn-publish,
+button.publish-post,
+.publish-post-btn,
+.actions-col .btn-success {
+    background-color: transparent !important;
+    border-color: #6fcf97 !important;
+    color: #6fcf97 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.btn-success:hover,
+.btn-publish:hover,
+button.publish-post:hover,
+.publish-post-btn:hover,
+.actions-col .btn-success:hover {
+    background-color: #6fcf97 !important;
+    border-color: #6fcf97 !important;
+    color: white !important;
+}
+
+.btn-success:focus,
+.btn-success:active,
+.btn-publish:focus,
+.btn-publish:active,
+button.publish-post:focus,
+button.publish-post:active,
+.publish-post-btn:focus,
+.publish-post-btn:active,
+.actions-col .btn-success:focus,
+.actions-col .btn-success:active {
+    background-color: transparent !important;
+    border-color: #6fcf97 !important;
+    color: #6fcf97 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Style dla tooltipów */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+    margin-bottom: 5px;
+}
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Specyficzne style dla tooltipów w przyciskach akcji */
+.actions-col .btn[data-tooltip]::before {
+    white-space: nowrap;
+    font-weight: normal;
+    text-transform: none;
+}
+
+/* Dodatkowe styles dla przycisków w grupie btn-group */
+.btn-group .btn-success,
+.btn-group .publish-post,
+.btn-group .btn-publish {
+    margin-right: 10px !important;
+    border-radius: 4px !important;
+}
+
+/* Pastelowy zielony kolor dla przycisku publikacji */
+.btn-success,
+.btn-publish,
+button.publish-post,
+.publish-post-btn,
+.actions-col .btn-success {
+    background-color: transparent !important;
+    border-color: #6fcf97 !important;
+    color: #6fcf97 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.btn-success:hover,
+.btn-publish:hover,
+button.publish-post:hover,
+.publish-post-btn:hover,
+.actions-col .btn-success:hover {
+    background-color: #6fcf97 !important;
+    border-color: #6fcf97 !important;
+    color: white !important;
+}
+
+.btn-success:focus,
+.btn-success:active,
+.btn-publish:focus,
+.btn-publish:active,
+button.publish-post:focus,
+button.publish-post:active,
+.publish-post-btn:focus,
+.publish-post-btn:active,
+.actions-col .btn-success:focus,
+.actions-col .btn-success:active {
+    background-color: transparent !important;
+    border-color: #6fcf97 !important;
+    color: #6fcf97 !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Style dla wygaszonego przycisku publikacji */
+.btn-success.disabled,
+.btn-publish.disabled,
+button.publish-post.disabled,
+.publish-post-btn.disabled,
+.actions-col .btn-success.disabled,
+.btn-success:disabled,
+.btn-publish:disabled,
+button.publish-post:disabled,
+.publish-post-btn:disabled,
+.actions-col .btn-success:disabled {
+    background-color: transparent !important;
+    border-color: rgba(111, 207, 151, 0.5) !important;
+    color: rgba(111, 207, 151, 0.5) !important;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+}
+
+.btn-success.disabled:hover,
+.btn-publish.disabled:hover,
+button.publish-post.disabled:hover,
+.publish-post-btn.disabled:hover,
+.actions-col .btn-success.disabled:hover,
+.btn-success:disabled:hover,
+.btn-publish:disabled:hover,
+button.publish-post:disabled:hover,
+.publish-post-btn:disabled:hover,
+.actions-col .btn-success:disabled:hover {
+    background-color: transparent !important;
+    border-color: rgba(111, 207, 151, 0.5) !important;
+    color: rgba(111, 207, 151, 0.5) !important;
+}
+
+/* Pastelowy zielony kolor dla badge'a Published */
+.badge.bg-success,
+span.badge.bg-success {
+    background-color: #6fcf97 !important;
+    color: white !important;
+}
+
+/* Pastelowy żółty kolor dla badge'a Draft */
+.badge.bg-warning,
+span.badge.bg-warning {
+    background-color: #f2c94c !important;
+    color: white !important;
+}

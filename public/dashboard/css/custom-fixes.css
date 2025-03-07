@@ -1,0 +1,154 @@
+/* Poprawione style dla badge'y i przycisków */
+
+/* Ujednolicone kolory */
+:root {
+    --success-color: #6fcf97;
+    --warning-color: #f2c94c;
+    --danger-color: #e05c6e;
+}
+
+/* Poprawiony kolor dla badge'a Published */
+.badge.bg-success,
+span.badge.bg-success {
+    background-color: var(--success-color) !important;
+    color: white !important;
+    border: none !important;
+    padding: 5px 8px !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+}
+
+/* Poprawiony kolor dla badge'a Draft */
+.badge.bg-warning,
+span.badge.bg-warning {
+    background-color: var(--warning-color) !important;
+    color: white !important;
+    padding: 5px 8px !important;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+}
+
+/* Ujednolicone kolory dla przycisków publikacji */
+.btn-success,
+.btn-publish,
+button.publish-post,
+.publish-post-btn,
+.actions-col .btn-success {
+    background-color: transparent !important;
+    border-color: var(--success-color) !important;
+    color: var(--success-color) !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.btn-success:hover,
+.btn-publish:hover,
+button.publish-post:hover,
+.publish-post-btn:hover,
+.actions-col .btn-success:hover {
+    background-color: var(--success-color) !important;
+    border-color: var(--success-color) !important;
+    color: white !important;
+}
+
+.btn-success:focus,
+.btn-success:active,
+.btn-publish:focus,
+.btn-publish:active,
+button.publish-post:focus,
+button.publish-post:active,
+.publish-post-btn:focus,
+.publish-post-btn:active,
+.actions-col .btn-success:focus,
+.actions-col .btn-success:active {
+    background-color: transparent !important;
+    border-color: var(--success-color) !important;
+    color: var(--success-color) !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Style dla wygaszonego przycisku publikacji */
+.btn-success.disabled,
+.btn-publish.disabled,
+button.publish-post.disabled,
+.publish-post-btn.disabled,
+.actions-col .btn-success.disabled,
+.btn-success:disabled,
+.btn-publish:disabled,
+button.publish-post:disabled,
+.publish-post-btn:disabled,
+.actions-col .btn-success:disabled {
+    background-color: transparent !important;
+    border-color: rgba(111, 207, 151, 0.5) !important;
+    color: rgba(111, 207, 151, 0.5) !important;
+    cursor: not-allowed !important;
+    opacity: 0.6 !important;
+}
+
+/* Równe odstępy między przyciskami w grupie */
+.btn-group {
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: nowrap !important;
+    position: relative !important;
+    justify-content: center !important;
+}
+
+.actions-col .btn-group {
+    display: flex !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    justify-content: center !important;
+}
+
+/* Ujednolicone style dla wszystkich przycisków w grupie */
+.btn-group .btn,
+.btn-group-sm .btn,
+.actions-col .btn-group .btn {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 5px !important;
+    border-radius: 4px !important;
+}
+
+.btn-group .btn i,
+.btn-group-sm .btn i,
+.actions-col .btn-group .btn i {
+    font-size: 16px !important;
+}
+
+/* Style dla tooltipów */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+    margin-bottom: 5px;
+}
+
+[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+}

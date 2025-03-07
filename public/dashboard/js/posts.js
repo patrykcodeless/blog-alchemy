@@ -224,22 +224,29 @@ function renderPosts(postsToRender) {
     postsToRender.forEach(post => {
         const row = document.createElement('tr');
         const date = new Date(post.created_at).toLocaleDateString();
+        const isPublished = post.status === 'published';
 
         row.innerHTML = `
             <td>${post.title}</td>
             <td>${date}</td>
             <td>
-                <span class="badge bg-${post.status === 'published' ? 'success' : 'warning'}">
-                    ${post.status === 'published' ? 'Published' : 'Draft'}
+                <span class="badge bg-${isPublished ? 'success' : 'warning'}">
+                    ${isPublished ? 'Published' : 'Draft'}
                 </span>
             </td>
             <td>
                 <div class="btn-group btn-group-sm">
-                    <button class="btn btn-primary btn-sm edit-post" data-id="${post.id}">
+                    <button class="btn btn-primary btn-sm edit-post" data-id="${post.id}" data-tooltip="Edit">
                         <i class="bi bi-pencil"></i>
                     </button>
-                    <button class="btn btn-danger btn-sm delete-post" data-id="${post.id}">
+                    <button class="btn btn-danger btn-sm delete-post" data-id="${post.id}" data-tooltip="Delete">
                         <i class="bi bi-trash"></i>
+                    </button>
+                    <button class="btn btn-success btn-sm publish-post ${isPublished ? 'disabled' : ''}" 
+                            data-id="${post.id}" 
+                            data-tooltip="${isPublished ? 'Already Published' : 'Publish Now'}"
+                            ${isPublished ? 'disabled' : ''}>
+                        <i class="bi bi-send"></i>
                     </button>
                 </div>
             </td>
@@ -248,19 +255,30 @@ function renderPosts(postsToRender) {
         postsTableBody.appendChild(row);
 
         // Dodaj event listenery do przycisków
-        const editBtn = row.querySelector('.edit-post');
-        const deleteBtn = row.querySelector('.delete-post');
-
-        if (editBtn) {
-            editBtn.addEventListener('click', () => {
-                // Funkcja edycji posta do zaimplementowania
-                alert(`Edit post ${post.id} - functionality coming soon`);
+        const editButtons = row.querySelectorAll('.edit-post');
+        editButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const postId = button.getAttribute('data-id');
+                // Tutaj dodaj kod do edycji posta
+                console.log(`Edit post with ID: ${postId}`);
             });
-        }
+        });
 
-        if (deleteBtn) {
-            deleteBtn.addEventListener('click', () => {
-                deletePost(post.id);
+        const deleteButtons = row.querySelectorAll('.delete-post');
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const postId = button.getAttribute('data-id');
+                deletePost(postId);
+            });
+        });
+
+        if (!isPublished) {
+            const publishButtons = row.querySelectorAll('.publish-post:not(.disabled)');
+            publishButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const postId = button.getAttribute('data-id');
+                    publishPost(postId);
+                });
             });
         }
     });
