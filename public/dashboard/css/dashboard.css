@@ -1,6 +1,11 @@
 /* Główne tło aplikacji */
 body {
-    background-color: #f8f9fa;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Ustawienia layoutu dashboard */
@@ -10,7 +15,7 @@ body {
 }
 
 .main-content {
-    background-color: #f8f9fa;
+    background-color: #0F0F0F;
     padding: 2rem;
     flex: 1;
 }
@@ -18,37 +23,38 @@ body {
 /* Style dla kart i elementów */
 .card,
 .accordion-item {
-    background: white;
+    background: var(--bg-card);
     border-radius: 10px !important;
     border: none;
-    box-shadow: 0 2px 4px rgba(246, 85, 238, 0.1);
+    box-shadow: 0 2px 4px rgba(226, 135, 200, 0.1);
     margin-bottom: 1.5rem;
+    color: var(--text-primary);
 }
 
 .card:hover,
 .accordion-item:hover {
-    box-shadow: 0 4px 8px rgba(246, 85, 238, 0.15);
+    box-shadow: 0 4px 8px rgba(226, 135, 200, 0.15);
     transform: translateY(-2px);
     transition: all 0.3s ease;
 }
 
 /* Style dla sidebara */
 .sidebar {
-    background-color: rgba(246, 85, 238, 0.1);
-    border-right: 1px solid rgba(246, 85, 238, 0.1);
+    background-color: var(--bg-card);
+    border-right: 1px solid rgba(226, 135, 200, 0.1);
     min-width: 250px;
     padding: 1rem 0;
 }
 
 .sidebar-header {
     padding: 1rem;
-    border-bottom: 1px solid rgba(246, 85, 238, 0.1);
+    border-bottom: 1px solid rgba(226, 135, 200, 0.1);
     margin-bottom: 1rem;
 }
 
 .sidebar-header h3 {
     margin: 0;
-    color: #333;
+    color: #F0F0F0;
     font-size: 1.5rem;
 }
 
@@ -66,7 +72,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0.75rem 1.5rem;
-    color: #555;
+    color: #999999;
     text-decoration: none;
     transition: all 0.2s ease;
 }
@@ -77,44 +83,83 @@ body {
 }
 
 .sidebar-nav .nav-link:hover {
-    background-color: rgba(246, 85, 238, 0.15);
-    color: #2c3e50;
+    background-color: rgba(226, 135, 200, 0.15);
+    color: #F0F0F0;
 }
 
 .sidebar-nav .nav-item.active .nav-link {
-    background-color: rgba(246, 85, 238, 0.25);
-    color: #2c3e50;
+    background-color: rgba(226, 135, 200, 0.25);
+    color: #F0F0F0;
 }
 
 /* Style dla navbar */
 .navbar {
     padding: 0.75rem 1.5rem;
-    background-color: white;
+    background-color: var(--bg-card) !important;
+    border-bottom: 1px solid rgba(226, 135, 200, 0.2) !important;
 }
 
 .navbar-text {
     font-weight: 500;
-    color: #333;
+    color: var(--text-primary);
 }
 
-#logoutButton {
-    border-color: #dc3545;
-    color: #dc3545;
+.navbar-light {
+    background-color: var(--bg-card) !important;
+}
+
+.bg-white {
+    background-color: var(--bg-card) !important;
+}
+
+/* Style dla przycisków nawigacji */
+.btn-outline-primary,
+.btn-primary,
+a.btn-primary {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
     transition: all 0.2s ease;
 }
 
-#logoutButton:hover {
-    background-color: #dc3545;
-    color: white;
+.btn-outline-primary:hover,
+.btn-primary:hover,
+a.btn-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-primary);
+}
+
+/* Przyciski Next/Previous */
+a.btn,
+button.btn,
+#Previous,
+#Next,
+.btn-pagination {
+    color: var(--primary-color);
+    background-color: transparent;
+    border-color: var(--primary-color);
+    transition: all 0.2s ease;
+}
+
+a.btn:hover,
+button.btn:hover,
+#Previous:hover,
+#Next:hover,
+.btn-pagination:hover {
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+    border-color: var(--primary-color);
 }
 
 /* Style dla formularzy */
 .form-control {
-    border: 1px solid #ced4da;
+    border: 1px solid #333;
     border-radius: 10px;
     padding: 0.75rem 1rem;
     transition: all 0.2s ease;
-    background-color: white;
+    background-color: var(--bg-input);
+    color: var(--text-primary);
 }
 
 .form-control:hover {
@@ -125,22 +170,27 @@ body {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 0.2rem var(--primary-color-transparent);
     outline: none;
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+}
+
+/* Dodanie stylów dla inputów, gdy są aktywne/wypełnione */
+.form-control:active,
+.form-control:focus-visible,
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover,
+.form-control:-webkit-autofill:focus,
+.form-control:-webkit-autofill:active {
+    background-color: var(--bg-input) !important;
+    -webkit-box-shadow: 0 0 0 30px var(--bg-input) inset !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 .form-label {
     font-weight: 500;
     margin-bottom: 0.5rem;
-}
-
-/* Style dla przycisków */
-.btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-color-dark);
-    border-color: var(--primary-color-dark);
+    color: var(--text-primary);
 }
 
 /* Style dla alertów */
@@ -169,7 +219,7 @@ body {
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: #6c757d;
+    color: #999999;
     cursor: pointer;
     font-size: 0.8rem;
     padding: 0.25rem 0.5rem;
@@ -197,6 +247,9 @@ body {
 /* Style dla paginacji */
 .page-link {
     border-radius: 5px;
+    background-color: #252525;
+    border-color: #333;
+    color: #F0F0F0;
 }
 
 .page-item.active .page-link {
@@ -206,15 +259,22 @@ body {
 
 .page-item:not(.active) .page-link:hover {
     color: var(--primary-color);
+    background-color: #333;
 }
 
 /* Zmienne CSS */
 :root {
-    --primary-color: #f655ee;
-    --primary-color-dark: #e03ad8;
-    --primary-color-light: #f987f3;
-    --primary-color-transparent: rgba(246, 85, 238, 0.2);
-    --secondary-color: #2c3e50;
+    --primary-color: #e287c8;
+    --primary-color-dark: #c96dad;
+    --primary-color-light: #f1add9;
+    --primary-color-transparent: rgba(226, 135, 200, 0.2);
+    --secondary-color: #F0F0F0;
+    --text-primary: #F0F0F0;
+    --text-secondary: #999999;
+    --bg-dark: #0F0F0F;
+    --bg-card: #1a1a1a;
+    --bg-input: #252525;
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Stylowanie komponentów */
@@ -236,4 +296,862 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Tytuły i nagłówki */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-weight: 600;
+}
+
+/* Tabele */
+.table,
+table,
+tbody,
+tr,
+th,
+td,
+thead,
+tfoot {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: rgba(226, 135, 200, 0.1) !important;
+}
+
+tr:nth-child(even),
+tr:nth-child(odd) {
+    background-color: var(--bg-card) !important;
+}
+
+tr:hover {
+    background-color: rgba(226, 135, 200, 0.05) !important;
+}
+
+th {
+    color: var(--primary-color) !important;
+    font-weight: 600 !important;
+    border-color: rgba(226, 135, 200, 0.2) !important;
+}
+
+/* Style dla elementu wyszukiwarki */
+.form-control,
+input[type="search"],
+input[type="text"],
+input.form-control,
+.search-posts-input,
+#searchInput,
+.search-input {
+    background-color: var(--bg-input) !important;
+    color: var(--text-primary) !important;
+    border-color: rgba(226, 135, 200, 0.2) !important;
+}
+
+/* Przyciski nieaktywne */
+.btn-outline-primary.disabled,
+.btn-primary.disabled,
+.btn[disabled],
+.btn:disabled,
+button[disabled],
+button:disabled,
+a.btn.disabled,
+.page-item.disabled .page-link,
+.btn-secondary:disabled,
+.btn-primary:disabled {
+    background-color: #6c757d !important;
+    color: rgba(255, 255, 255, 0.65) !important;
+    border-color: #6c757d !important;
+    opacity: 0.4 !important;
+}
+
+/* Przyciski Previous/Next */
+#Previous,
+#Next,
+.btn-pagination,
+.pagination .page-link {
+    color: var(--primary-color) !important;
+    background-color: transparent !important;
+    border-color: var(--primary-color) !important;
+}
+
+#Previous:hover,
+#Next:hover,
+.btn-pagination:hover,
+.pagination .page-link:hover {
+    background-color: var(--primary-color) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Kontener wyszukiwarki */
+.search-container,
+.search-wrapper,
+.search-box,
+.search-form {
+    background-color: transparent !important;
+}
+
+.search-icon {
+    color: var(--primary-color) !important;
+}
+
+/* Obramowania tabel */
+.table-responsive,
+.table-container {
+    background-color: var(--bg-card) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* Status etykiety */
+.badge.bg-success,
+.badge.bg-primary,
+.badge.bg-warning,
+.badge.bg-danger {
+    color: #F0F0F0;
+}
+
+/* Style dla daty w tabeli */
+.date-col {
+    color: #999999;
+}
+
+/* Style dla panelu statusu */
+.status-col .badge {
+    font-weight: normal;
+    padding: 0.5em 0.75em;
+}
+
+/* Zastąpienie bootstrap text-muted */
+.text-muted {
+    color: var(--primary-color) !important;
+}
+
+/* Style dla modali/popupów */
+.modal-content,
+.modal-header,
+.modal-body,
+.modal-footer,
+.popup,
+.popup-header,
+.popup-body,
+.popup-footer,
+.confirm-dialog {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: rgba(226, 135, 200, 0.2) !important;
+}
+
+.modal-title,
+.popup-title,
+.confirm-title,
+.confirm-dialog h1,
+.confirm-dialog h2,
+.confirm-dialog h3,
+.confirm-dialog h4,
+.confirm-dialog h5 {
+    color: var(--text-primary) !important;
+    font-weight: 600;
+}
+
+.modal-header,
+.popup-header {
+    border-bottom: 1px solid rgba(226, 135, 200, 0.2) !important;
+}
+
+.modal-footer,
+.popup-footer {
+    border-top: 1px solid rgba(226, 135, 200, 0.2) !important;
+}
+
+/* Przyciski w modalu */
+.modal .btn-secondary,
+.modal .btn-cancel,
+.popup .btn-secondary,
+.popup .btn-cancel,
+.confirm-dialog .btn-secondary,
+.confirm-dialog button[data-dismiss="modal"] {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: var(--text-primary);
+}
+
+.modal .btn-danger,
+.popup .btn-danger,
+.confirm-dialog .btn-danger,
+.confirm-dialog .btn-delete {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: var(--text-primary);
+}
+
+/* Przycisk zamykania (X) */
+.modal .close,
+.popup .close,
+.modal-close,
+.popup-close,
+.close-button {
+    color: var(--text-primary) !important;
+    text-shadow: none !important;
+    opacity: 0.7;
+}
+
+.modal .close:hover,
+.popup .close:hover,
+.modal-close:hover,
+.popup-close:hover,
+.close-button:hover {
+    color: var(--text-primary) !important;
+    opacity: 1;
+}
+
+/* Style dla przycisku Cancel w popupie */
+.btn-secondary,
+button[data-action="cancel"] {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover,
+button[data-action="cancel"]:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+    color: var(--text-primary);
+}
+
+/* Style dla przycisku Delete w popupie */
+.btn-danger,
+button[data-action="delete"] {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover,
+button[data-action="delete"]:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    color: white;
+}
+
+/* Styl dla logoutButton (nadpisanie wcześniejszych styli) */
+#logoutButton {
+    border-color: #dc3545;
+    color: #dc3545;
+    transition: all 0.2s ease;
+}
+
+#logoutButton:hover {
+    background-color: #dc3545;
+    color: var(--text-primary);
+}
+
+/* Generyczne popupy i okna dialogowe */
+.dialog,
+.dialog-content,
+.popover,
+.popover-content,
+.tooltip-inner,
+.dropdown-menu,
+.message-box,
+.alert-box,
+.notification {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-color: rgba(226, 135, 200, 0.2) !important;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(226, 135, 200, 0.2);
+}
+
+.dropdown-item {
+    color: var(--text-primary);
+}
+
+.dropdown-item:hover {
+    background-color: rgba(226, 135, 200, 0.1);
+    color: var(--text-primary);
+}
+
+/* Potwierdzenie usunięcia */
+#deleteConfirmation,
+#confirmDeleteModal,
+.delete-confirmation,
+.confirm-delete,
+[id*="delete"][id*="confirm"],
+[id*="confirm"][id*="delete"],
+[class*="delete"][class*="confirm"],
+[class*="confirm"][class*="delete"] {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-radius: 10px;
+    border: 1px solid rgba(226, 135, 200, 0.2);
+}
+
+#deleteConfirmation .modal-content,
+#confirmDeleteModal .modal-content,
+.delete-confirmation .modal-content,
+.confirm-delete .modal-content {
+    background-color: var(--bg-card) !important;
+}
+
+/* X button */
+.modal-header .close span,
+.close-icon,
+button.close {
+    color: var(--text-primary) !important;
+    text-shadow: none !important;
+}
+
+/* Modal usuwania posta */
+#deletePostModal.modal,
+#deletePostModal .modal-dialog,
+#deletePostModal .modal-content,
+#deletePostModal .modal-header,
+#deletePostModal .modal-body,
+#deletePostModal .modal-footer {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+}
+
+#deletePostModal .modal-title {
+    color: var(--text-primary) !important;
+}
+
+#deletePostModal .btn-close {
+    color: var(--text-primary) !important;
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+#deletePostModal .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: white;
+}
+
+#deletePostModal .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+#deletePostModal.show {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Style dla konkretnej tabeli postów */
+#postsTable,
+#posts-table,
+.posts-table,
+table.table {
+    background-color: var(--bg-card) !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+#postsTable th,
+#posts-table th,
+.posts-table th,
+table.table th {
+    background-color: rgba(42, 42, 42, 0.7) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600 !important;
+    padding: 1rem !important;
+    border-bottom: 1px solid rgba(226, 135, 200, 0.2) !important;
+    text-align: left !important;
+}
+
+#postsTable td,
+#posts-table td,
+.posts-table td,
+table.table td {
+    padding: 1rem !important;
+    border-bottom: 1px solid rgba(226, 135, 200, 0.1) !important;
+    vertical-align: middle !important;
+}
+
+#postsTable tr:last-child td,
+#posts-table tr:last-child td,
+.posts-table tr:last-child td,
+table.table tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* Specyficzne style dla kolumn tabeli */
+.title-col {
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+}
+
+.date-col {
+    color: var(--text-secondary) !important;
+    font-size: 0.9rem !important;
+}
+
+.status-col {
+    text-align: center !important;
+}
+
+.actions-col {
+    text-align: right !important;
+    white-space: nowrap !important;
+}
+
+/* Dodatkowe style dla kontenerów i tła */
+.page-content,
+.content,
+.content-area,
+.content-wrapper,
+.component-container,
+.main-container,
+.main-content,
+.container-fluid,
+.table-container,
+.data-container,
+.posts-container,
+.posts-wrapper,
+.search-results,
+div[id$="Container"],
+div[class$="container"],
+div[class*="Container"],
+div[class*="container"] {
+    background-color: var(--bg-dark) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Style dla panelu wyszukiwania */
+.search-panel,
+.search-header,
+.search-bar,
+.search-control,
+.filter-panel,
+.filters,
+div[class*="search"],
+div[id*="search"],
+div[class*="filter"],
+div[id*="filter"] {
+    background-color: var(--bg-card) !important;
+    border-radius: 10px !important;
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+    border: 1px solid rgba(226, 135, 200, 0.1) !important;
+}
+
+/* Style dla wierszy tabeli z różnymi kolorami */
+.table-striped>tbody>tr:nth-of-type(odd),
+.table-striped>tbody>tr:nth-of-type(even) {
+    background-color: var(--bg-card) !important;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd):hover,
+.table-striped>tbody>tr:nth-of-type(even):hover {
+    background-color: rgba(226, 135, 200, 0.05) !important;
+}
+
+/* Style dla pokazywania liczby wpisów/paginacji */
+.showing-entries,
+.pagination-info,
+.posts-count,
+.results-count,
+.total-count,
+div[class*="showing"],
+div[class*="count"],
+div[class*="pagination-info"] {
+    color: var(--text-secondary) !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Pasek nawigacyjny - container-fluid */
+.navbar .container-fluid {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border: none !important;
+}
+
+/* Poprawa widoczności tekstu w górnym pasku */
+.navbar-text,
+#userEmail,
+.navbar .navbar-text,
+.navbar #userEmail {
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+}
+
+/* Style dla placeholdera wyszukiwarki */
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: var(--text-secondary) !important;
+    opacity: 0.7 !important;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: var(--text-secondary) !important;
+    opacity: 0.7 !important;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: var(--text-secondary) !important;
+    opacity: 0.7 !important;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: var(--text-secondary) !important;
+    opacity: 0.7 !important;
+}
+
+::placeholder {
+    color: var(--text-secondary) !important;
+    opacity: 0.7 !important;
+}
+
+/* Dodatkowe style dla wyszukiwarki */
+input[type="search"]::placeholder,
+.search-input::placeholder,
+input.form-control::placeholder {
+    color: var(--text-secondary) !important;
+    opacity: 0.7 !important;
+}
+
+/* Naprawienie kolorów w dropdownie nawigacji */
+.dropdown-menu-end,
+.dropdown-menu-right {
+    background-color: var(--bg-card) !important;
+    border-color: rgba(226, 135, 200, 0.2) !important;
+}
+
+.dropdown-item,
+.dropdown-menu a {
+    color: var(--text-primary) !important;
+}
+
+.dropdown-item:hover,
+.dropdown-menu a:hover {
+    background-color: rgba(226, 135, 200, 0.1) !important;
+    color: var(--primary-color) !important;
+}
+
+/* Dodatkowe style dla całej nawigacji */
+nav,
+.navbar,
+.navbar-light,
+.bg-white,
+.border-bottom {
+    background-color: var(--bg-card) !important;
+    border-color: rgba(226, 135, 200, 0.2) !important;
+}
+
+/* Bardzo specyficzne style dla górnej nawigacji */
+.main-content nav.navbar.navbar-expand-lg.navbar-light.bg-white.border-bottom {
+    background-color: var(--bg-card) !important;
+    border-color: rgba(226, 135, 200, 0.2) !important;
+    padding: 0.75rem 1.5rem !important;
+}
+
+.main-content nav.navbar.navbar-expand-lg.navbar-light.bg-white.border-bottom .container-fluid {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+}
+
+.main-content nav.navbar.navbar-expand-lg.navbar-light.bg-white.border-bottom .navbar-text,
+.main-content nav.navbar.navbar-expand-lg.navbar-light.bg-white.border-bottom #userEmail {
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+}
+
+/* Lepsze style dla wyszukiwarki */
+input[type="search"],
+input[type="text"],
+.form-control[type="search"],
+.form-control[type="text"],
+input.search-posts-input,
+.form-control.search-input {
+    background-color: var(--bg-input) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(226, 135, 200, 0.2) !important;
+    border-radius: 10px !important;
+    padding: 0.75rem 1rem !important;
+}
+
+input[type="search"]:focus,
+input[type="text"]:focus,
+.form-control[type="search"]:focus,
+.form-control[type="text"]:focus,
+input.search-posts-input:focus,
+.form-control.search-input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.2rem var(--primary-color-transparent) !important;
+    background-color: var(--bg-input) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Nadpisanie wszystkich możliwych styli Bootstrapa */
+.bg-light,
+.bg-white,
+.bg-body,
+.bg-transparent {
+    background-color: var(--bg-card) !important;
+}
+
+.text-dark,
+.text-body,
+.text-black {
+    color: var(--text-primary) !important;
+}
+
+.border,
+.border-top,
+.border-bottom,
+.border-start,
+.border-end {
+    border-color: rgba(226, 135, 200, 0.2) !important;
+}
+
+/* Bardzo specyficzny selektor dla input wyszukiwania postów */
+#searchPosts,
+#searchPosts.form-control,
+input#searchPosts,
+input#searchPosts.form-control {
+    background-color: var(--bg-input) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(226, 135, 200, 0.2) !important;
+    border-radius: 10px !important;
+}
+
+#searchPosts::placeholder,
+#searchPosts.form-control::placeholder,
+input#searchPosts::placeholder,
+input#searchPosts.form-control::placeholder {
+    color: var(--text-secondary) !important;
+    opacity: 0.7 !important;
+}
+
+/* Style dla div zawierającego wyszukiwarkę */
+.search-container,
+.search-box,
+div:has(> #searchPosts) {
+    background-color: transparent !important;
+}
+
+/* Najwyższy priorytet - nadpisuje wszystkie inne style */
+input::placeholder,
+.form-control::placeholder,
+*[placeholder]::placeholder {
+    color: var(--text-secondary) !important;
+    opacity: 0.7 !important;
+}
+
+/* Style dla głównej wyszukiwarki z ikoną lupy */
+.search-container,
+.search-box,
+.search-control,
+.search-form,
+.input-group,
+.search-posts,
+.search-wrapper,
+div:has(> input[type="search"]),
+div:has(> input[type="text"][placeholder*="Search"]) {
+    background-color: var(--bg-card) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* Ikona lupy */
+.search-icon,
+.bi-search,
+.bi.bi-search,
+i.bi-search,
+svg.bi-search {
+    color: var(--text-secondary) !important;
+    opacity: 0.7 !important;
+    fill: var(--text-secondary) !important;
+}
+
+/* Bardzo specyficzne style dla głównej wyszukiwarki */
+input[placeholder="Search posts..."],
+input[placeholder*="Search posts"],
+.form-control[placeholder*="Search posts"],
+input.form-control[placeholder*="Search"] {
+    background-color: var(--bg-input) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(226, 135, 200, 0.2) !important;
+    border-radius: 10px !important;
+    padding: 0.75rem 1rem !important;
+}
+
+/* Kontener wyszukiwarki - obraz na stronie */
+.page-content>div>div.search-box,
+.search-box,
+.component-container>div>div.search-box,
+.main-content div[class*="search"],
+.posts-container div[class*="search"],
+div[class*="search-"] {
+    background-color: var(--bg-card) !important;
+    padding: 10px !important;
+    border-radius: 10px !important;
+    margin-bottom: 15px !important;
+}
+
+/* Bardzo specyficzne dla wyszukiwarki ze zdjęcia */
+button.btn i.bi.bi-search,
+button.btn svg.bi.bi-search,
+.input-group-text i.bi.bi-search,
+.input-group-text svg.bi.bi-search {
+    color: var(--text-secondary) !important;
+    fill: var(--text-secondary) !important;
+}
+
+.input-group,
+.input-group-text,
+.input-group-prepend,
+.input-group-append {
+    background-color: var(--bg-input) !important;
+    border-color: rgba(226, 135, 200, 0.2) !important;
+}
+
+/* Bardzo specyficzne style dla wyszukiwarki ze struktura z posts.html */
+.input-group-text,
+span.input-group-text,
+.input-group>.input-group-text {
+    background-color: var(--bg-input) !important;
+    color: var(--text-secondary) !important;
+    border-color: rgba(226, 135, 200, 0.2) !important;
+    border-right: none !important;
+}
+
+/* Dopasowanie wyszukiwarki */
+.col-md-4 .input-group {
+    background-color: var(--bg-input) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+/* Bardzo konkretne selektory dla wyszukiwarki z posts.html */
+#postsPage .input-group,
+#postsPage .input-group-text,
+#postsPage .form-control,
+#postsPage #searchPosts,
+.card-body .input-group,
+.card-body .input-group-text,
+.card-body .form-control[placeholder="Search posts..."],
+.col-md-4 .input-group,
+.col-md-4 .input-group-text,
+.col-md-4 #searchPosts {
+    background-color: var(--bg-input) !important;
+    color: var(--text-primary) !important;
+    border-color: rgba(226, 135, 200, 0.2) !important;
+}
+
+/* Style dla ikony w konkretnej wyszukiwarce */
+.input-group-text i.bi-search,
+.input-group-text i.bi.bi-search,
+.input-group-text .bi-search,
+.col-md-4 .input-group-text i.bi-search {
+    color: var(--text-secondary) !important;
+}
+
+/* Border radius dla wyszukiwarki */
+.col-md-4 .input-group {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+
+.col-md-4 .input-group-text {
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+.col-md-4 #searchPosts {
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+
+/* Dodatkowe style dla karty wyszukiwarki */
+.card {
+    background-color: var(--bg-card) !important;
+    border: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-body {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Usunięcie niebieskiej poświaty przycisków podczas focus/active */
+.btn:focus,
+.btn:active,
+.btn:hover {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Przywrócenie własnego koloru dla przycisków primary */
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: var(--primary-color) !important;
+    color: var(--text-button) !important;
+}
+
+/* Przywrócenie własnego koloru dla przycisków danger */
+.btn-danger:focus,
+.btn-danger:active {
+    background-color: var(--danger-color) !important;
+    color: var(--text-button) !important;
+}
+
+/* Wyrównanie przycisków do prawej strony w sekcjach ustawień */
+.card-body .btn-group,
+.card-body button[type="submit"],
+.card-body .btn,
+.card-body a.btn {
+    float: right;
+    margin-left: 10px;
+}
+
+/* Specjalne style dla przycisków "Update Email", "Update Password" i "Save Profile" */
+button[id="updateEmail"],
+button[id="updatePassword"],
+button[id="saveProfile"],
+button[id="saveSettings"] {
+    float: right;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Dodanie clearfix dla card-body aby zachować poprawny układ */
+.card-body::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Styl dla przycisków "Show" w polach hasła */
+.password-toggle {
+    background-color: var(--bg-button) !important;
+    color: var(--text-button) !important;
+    border-color: var(--border-color) !important;
+}
+
+.password-toggle:focus,
+.password-toggle:active {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: var(--bg-button-hover) !important;
 }
