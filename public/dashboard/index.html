@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Alchemy - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/dashboard/css/dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Blog Alchemy</h3>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="nav-item" id="homeNav">
+                    <a href="#" class="nav-link" data-page="home">
+                        <i class="bi bi-house-door"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item" id="postsNav">
+                    <a href="#" class="nav-link" data-page="posts">
+                        <i class="bi bi-file-text"></i>
+                        <span>My Posts</span>
+                    </a>
+                </li>
+                <li class="nav-item" id="settingsNav">
+                    <a href="#" class="nav-link" data-page="settings">
+                        <i class="bi bi-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center">
+                        <span class="navbar-text me-3" id="userEmail">Hello, </span>
+                    </div>
+                    <button class="btn btn-outline-danger" id="logoutButton">Logout</button>
+                </div>
+            </nav>
+
+            <!-- Page Content -->
+            <div class="content-wrapper">
+                <!-- Dynamically loaded components will go here -->
+                <div id="componentContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Component loader script -->
+    <script src="/dashboard/js/component-loader.js"></script>
+
+    <!-- Dashboard main script -->
+    <script src="/dashboard/js/dashboard.js"></script>
+
+    <!-- Posts script -->
+    <script src="/dashboard/js/posts.js"></script>
+
+    <!-- Settings script -->
+    <script src="/dashboard/js/settings.js"></script>
+</body>
+
+</html>

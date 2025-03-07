@@ -1,0 +1,29 @@
+<div class="tab-pane fade" id="registerTab" role="tabpanel">
+    <form id="registerForm" novalidate>
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" required>
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" required>
+        </div>
+        <div class="mb-3">
+            <label for="registerEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="registerEmail" required>
+        </div>
+        <div class="mb-3">
+            <label for="registerPassword" class="form-label">Password</label>
+            <div class="password-input-group">
+                <input type="password" class="form-control" id="registerPassword" required>
+                <button type="button" class="password-toggle" data-target="registerPassword">
+                    <span class="password-toggle-text">Show</span>
+                </button>
+            </div>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+        </div>
+        <div id="registerAlerts" class="mt-3"></div>
+    </form>
+</div>
